@@ -43,8 +43,9 @@ public class SecurityConfig {
 
                 .addFilterBefore(this.twoFactorAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .formLogin(formLogin -> formLogin
-                        .successHandler(customSuccessHandler())
-                        .defaultSuccessUrl("/dashboard", true));
+
+                        .successHandler(customSuccessHandler()));
+                        //.defaultSuccessUrl("/dashboard", true));
         // @formatter:on
         return http.build();
     }
